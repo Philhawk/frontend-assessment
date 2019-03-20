@@ -1,0 +1,42 @@
+
+@media all and (max-width: 1690px) { 
+
+}
+
+@media all and (max-width: 1280px) { 
+
+}
+@media all and (max-width: 980px) { 
+
+}
+@media all and (max-width: 736px) { 
+
+}
+@media all and (max-width: 480px) { 
+
+}
+@media all and (min-width: 375px) { 
+	.marvel-logo {
+		display: none;
+	}
+
+	.small-nav {
+		display: inline
+	}
+
+	.small-hamburger-logo {
+    width: 38px;
+    height: 38px;
+    float: left;
+    padding-left: 20px;
+    padding-top: 10px;
+	}
+	
+	.small-marvel-logo {
+    height: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-left: 12%;
+	}
+}

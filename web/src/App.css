@@ -8,6 +8,32 @@
   pointer-events: none;
 }
 
+.section {
+  position: fixed;
+  left: 0px;
+  height: 66px;
+  top: 0px;
+  right: 0px;
+  background-color: #EA212D;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding-right: 10px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -30,4 +56,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media all and (max-width: 1690px) { 
+  
+}
+@media all and (max-width: 1280px) { 
+
+}
+@media all and (max-width: 980px) { 
+
+}
+@media all and (max-width: 736px) { 
+
+}
+@media all and (max-width: 480px) { 
+  
+}
+@media all and (max-width: 375px) { 
+  
 }
