@@ -36,6 +36,10 @@
 	right: 0;
 }
 
+.search-container {
+	overflow-y: scroll;
+	height: 230px;
+}
 .no-results {
 	padding-left: 32px;
 	height: 150px;
@@ -47,6 +51,7 @@
 	border: solid 1px grey;
 	font-size: 16px;
 	border-radius: 5px;
+	background-color: #FAFAFA
 }
 .search-container > div:first-child {
 	border-radius: 10px 10px 0 0;

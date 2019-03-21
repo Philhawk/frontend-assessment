@@ -12,6 +12,7 @@
 }
 
 .search-box {
+	width: 100%;
 	display: flex;
 	align-items:center;
 }
@@ -24,9 +25,15 @@
 
 }
 @media all and (max-width: 980px) { 
-
+	.hero-icon {
+		height: 80px;
+		width: 80px;
+		padding: 10px;
+		border-radius: 100%;
+	}
 }
 @media all and (max-width: 736px) { 
+
 
 }
 @media all and (max-width: 480px) { 
@@ -35,10 +42,5 @@
 	}
 }
 @media all and (max-width: 376px) { 
-	.hero-icon {
-		height: 80px;
-		width: 80px;
-		padding: 10px;
-		border-radius: 100%;
-	}
+
 }

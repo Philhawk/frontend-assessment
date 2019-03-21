@@ -9,14 +9,8 @@
 @media all and (max-width: 980px) { 
 
 }
-@media all and (max-width: 736px) { 
-
-}
-@media all and (max-width: 480px) { 
-
-}
-@media all and (min-width: 375px) { 
-	.marvel-logo {
+@media all and (max-width: 769px) { 
+    .marvel-logo {
 		display: none;
 	}
 
@@ -39,4 +33,10 @@
     width: 50%;
     margin-left: 12%;
 	}
+}
+@media all and (max-width: 480px) { 
+
+}
+@media all and (max-width: 375px) { 
+
 }

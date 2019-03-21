@@ -14,6 +14,7 @@ class Search extends Component {
   }
 
   getInfo = (query) => {
+    console.log('ping')
     this.setState({showSpinner: false, results: []})
     axios.get(`http://localhost:1337/superheroes?name_like=${query}`)
       .then(({ data }) => {
@@ -32,16 +33,17 @@ class Search extends Component {
       showSpinner: shouldSpinnerBeSet,
       query: this.search.value
     }, () => {
-      if (this.state.query && this.state.query.length > 1) {
+      if (this.state.query.length > 4 && this.state.results.length === 0) {
+        this.setState({showNoResults: true, showSpinner: false})
+      }
+      else if (this.state.query && this.state.query.length > 1) {
+        this.setState({showNoResults: false})
         this.getInfo(this.state.query)
       } else if (this.state.query === '') {
-        this.setState({showSpinner: false})
+        this.setState({showSpinner: false, showNoResults: false})
       } else if (this.state.results.length === 0) {
         this.setState({results: [], showSpinner: false, showNoResults: true})
-      } else {
-        console.log('this is results', this.state.results)
-        console.log('this is query', this.state.query)
-      }
+      } 
     })
   }
 
@@ -54,14 +56,15 @@ class Search extends Component {
 						ref={input => this.search = input}
 						onChange={this.handleInputChange}
 						className="search-field"
+            value={this.state.query}
 					/>
-          <img style={{display: this.state.showSpinner ? '' : 'none'}} className="spinner" src={spinner}/>
+          <img style={{display: this.state.showNoResults ? '' : 'none'}} className="spinner" src={spinner}/>
 				</span>
-				<div className="search-container">
+				<div style={{display: this.state.showNoResults ? 'none' : ''}} className="search-container">
         {
 					this.state.results.length > 0 ? this.state.results.map((row, i) =>
 					<div className="search-results">
-						<SearchResults {...row} />
+						<SearchResults hero={row} />
 					</div>
           ) : ''
         }
