@@ -1,9 +1,7 @@
-# Frontend-assessment - Searchable Select List
+# Philip Jacob - Marvel Frontend Challenge
 
 ## Overview
-We'd like you to create a searchable select list that retrieves Marvel characters from our Superhero API.
-
-The style and behaviour of the select list should match the images shown below.
+This applications was built according to these guidelines, using a mobile-first approach that emphasises speed.
 
 ## Prerequisites
 1. Node.js and NPM installed on your local machine
@@ -18,117 +16,61 @@ The server can be started with:
 
 ```npm start```
 
-### Request
+You should now have your API running on port 1337.
 
-To retrieve a list of all characters:
+## Web set-up
 
-```GET http://localhost:1337/superheroes ```
+Within this repo is another web folder that contains a script for running a standard react app
 
-To query for characters by their name:
+The server can be started with:
 
-```GET http://localhost:1337/superheroes?name_like=Iron```
+```npm install```
 
-This can be combined with filtering by other fields
+```npm start```
 
-```GET http://localhost:1337/superheroes?name_like=Iron&work.base_like=New%20York```
+You should now have your web app running on port 3000.
 
-Details and more advanced queries can be found [here](https://github.com/typicode/json-server#routes)
+## Considerations
+
+### Approach
+
+In order to try and help myself not forget any features, I tried to break down this exercise into the following tasks.
+
+- Mobile Navbar (including Search)
+- Adaptive navbar
+- Hamburger (no functionality)
+- Marvel logo nuances (adaptive vs mobile)
+- Search component (capable of being used across view types)
+
+Within search, there were the following elements to consider
+
+- What metric to search by? Name? Base? In the end, I made the decision to search first by name and then, in the event of no results found, do a larger full-text search for references
+- Input outline
+- On hover CSS styling
+- On click active 'Hero' namechange
+- Populating the search input with the clicked 'hero'
+- Accounting for No Results
+- Accounting for the logic of the spinner (a surprisingly tricky little bugger!)
+
+### CSS Frameworks
+
+For this task, I deliberately chose to not use any CSS frameworks. Why? Over the last few years I have spent alot of time understanding the benefits of self-prescribed grid systems and boxing. The task presented today was not overly difficult, but it did add a level of complexity to not go down the easier route of using a Semantic or Bootstrap.
+
+### Accessibility
+
+I tried to follow the guidelines prescribed in the [React Accessibility Guidelines](https://reactjs.org/docs/accessibility.html) as much as possible, following wherever possible standards including
+
+- Semantic HTML
+- Clear labelling
+- Error notification (limited in this instance)
+- Focus control
+- Mouse and pointer events
+
+As always, there is *so* much more I could do in this area.
+
+### Testing
 
 
-### Response
+### Conclusion
 
-An example response can be seen below.
-
-```json
-[
-  {
-    "id": 345,
-    "name": "Iron Fist",
-    "slug": "345-iron-fist",
-    "powerstats": {
-      "intelligence": 75,
-      "strength": 55,
-      "speed": 33,
-      "durability": 50,
-      "power": 95,
-      "combat": 100
-    },
-    "appearance": {
-      "gender": "Male",
-      "race": "Human",
-      "height": [
-        "5'11",
-        "180 cm"
-      ],
-      "weight": [
-        "175 lb",
-        "79 kg"
-      ],
-      "eyeColor": "Blue",
-      "hairColor": "Blond"
-    },
-    "biography": {
-      "fullName": "Danny Rand",
-      "alterEgos": "No alter egos found.",
-      "aliases": [
-        "Daredevil",
-        "Daniel Thomas Rand",
-        "the Living Weapon",
-        "Young Dragon",
-        "Danny Rand"
-      ],
-      "placeOfBirth": "-",
-      "firstAppearance": "Marvel Premiere #15 (May 1974)",
-      "publisher": "Marvel Comics",
-      "alignment": "good"
-    },
-    "work": {
-      "occupation": "Adventurer; formerly co-owner of Rand-Meachum, Inc., bodyguard, private investigator, research assistant, warrior",
-      "base": "New York"
-    },
-    "connections": {
-      "groupAffiliation": "New Avengers, Heroes for Hire, Inc., Secret Defenders, Defenders, Misty Knight, Luke Cage",
-      "relatives": "Wendell Rand-K'ai (father, deceased), Heather Duncan Rand (mother, deceased), Yu-Ti (adopted uncle), Miranda Rand-K'ai (half-sister), Lord Tuan (adopted paternal grandfather, deceased), Lady Ming (adopted paternal grandmother, deceased), Thomas Duncan (maternal grandfather)"
-    },
-    "images": {
-      "xs": "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/xs/345-iron-fist.jpg",
-      "sm": "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/345-iron-fist.jpg",
-      "md": "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/md/345-iron-fist.jpg",
-      "lg": "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/345-iron-fist.jpg"
-    }
-  }
-]
-```
-
-## Mandatory Requirements
-- Must be completed in react (redux is optional)
-- Cannot use third party search select library
-- Behaviour and style should be the same as shown in the images below. You can choose which fields you want to use for the description. 
-- Items in the list should be selectable via a mouse click. On select, the character name should be written to the console.
-- A loader should be shown when the results are being queried from the API
-
-## Submission
-The submission should be committed to Github and a link provided to the submission along with a readme on how to setup and run the solution. The solution is expected to incorporate good software development practices such as comments and tests.
-
-**If you have any problems with this assessment, you can create a GitHub issue that will be answered shortly by one of the Hireup development team or email us directly at tech@hireup.com.au**
-
-## Examples
-
-Example 1 - Closed Select
-![Screenshot1](https://i.imgur.com/9ooq75J.jpg)
-
-Example 2 - Opened Select
-![Screenshot2](https://i.imgur.com/LIlF1Bd.jpg)
-
-Example 3 - No Results Select
-![Screenshot3](https://i.imgur.com/SmLh1sZ.jpg)
-
-Mobile Example 1 - Closed Select
-![ScreenShot4](https://i.imgur.com/KUaenjW.jpg)
-
-Mobile Example 2 - Opened Select
-![ScreenShot5](https://i.imgur.com/KAJvi1s.jpg)
-
-Mobile Example 3 - No Results Select
-![ScreenShot6](https://i.imgur.com/0938RCR.jpg)
-
+In conclusion, I have thoroughly enjoyed this opportunity to interview and complete this exercise. I welcome any and all feedback you may have.
