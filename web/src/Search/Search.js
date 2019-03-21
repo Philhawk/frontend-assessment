@@ -6,11 +6,25 @@ import SearchResults from '../SearchResults/SearchResults'
 import NoResults from '../NoResults/NoResults'
 
 class Search extends Component {
-  state = {
-    query: '',
-    results: [],
-    showSpinner: false,
-    showNoResults: false
+  constructor() {
+    super();
+    this.state = {
+      query: '',
+      results: [],
+      showSpinner: false,
+      showNoResults: false
+    }
+
+    this.selectHero = this.selectHero.bind(this);
+  }
+
+  selectHero = (hero) => {
+    this.setState({
+      results: [],
+      showNoResults: false,
+      showSpinner: false,
+      query: hero
+    })
   }
 
   getInfo = (query) => {
@@ -64,7 +78,7 @@ class Search extends Component {
         {
 					this.state.results.length > 0 ? this.state.results.map((row, i) =>
 					<div className="search-results">
-						<SearchResults hero={row} />
+						<SearchResults selectHero={this.selectHero} hero={row} />
 					</div>
           ) : ''
         }

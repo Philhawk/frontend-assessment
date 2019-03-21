@@ -4,11 +4,6 @@ import Body from "./Body/Body";
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-    }
-  }
 
   render() {
     return (

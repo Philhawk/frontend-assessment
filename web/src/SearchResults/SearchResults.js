@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './SearchResults.css';
 
 class SearchResults extends Component {
+
 	render(){
 		return(
-			<div className="search-box">
+			<div className="search-box" onClick={() => this.props.selectHero(this.props.hero.name)}>
 			<span className="search-result-icon">
 					<img className="hero-icon" src={this.props.hero.images.sm}/>
 			</span>
