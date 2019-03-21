@@ -1,4 +1,15 @@
-.section-2 {
-    overflow: scroll;
-    padding-top: 100px;
+@media all and (min-width: 767px) { 
+	.section-2-without-search {
+		display: none; 
+	}
+	.section-2-with-search {
+		display: none;
+	}
 }
+@media all and (max-width: 766px) { 
+	.section-2-with-search {
+		overflow: scroll;
+    padding-top: 100px;
+	}
+}
+

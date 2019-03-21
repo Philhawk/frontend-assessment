@@ -14,7 +14,7 @@ class SearchResults extends Component {
 					{this.props.hero.name}
 				</span>
 				<span className="search-result-description">
-					{this.props.hero.work.occupation}
+					{this.props.hero.work.occupation ? this.props.hero.work.occupation : "First appeared in" + this.props.hero.biography.firstAppearance}
 				</span>
 			</div>
 		</div>

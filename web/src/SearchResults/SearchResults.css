@@ -4,6 +4,13 @@
 
 .search-result-description {
 	display: block;
+	padding-left: 10px;
+    padding-top: 5px;
+	font-size: 14px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 162px;
 }
 
 .search-result-name {
@@ -17,6 +24,13 @@
 	align-items:center;
 }
 
+.hero-icon {
+	height: 80px;
+	width: 80px;
+	padding: 10px;
+	border-radius: 100%;
+}
+
 @media all and (max-width: 1690px) { 
 
 }
@@ -25,13 +39,8 @@
 
 }
 @media all and (max-width: 980px) { 
-	.hero-icon {
-		height: 80px;
-		width: 80px;
-		padding: 10px;
-		border-radius: 100%;
-	}
 }
+
 @media all and (max-width: 736px) { 
 
 

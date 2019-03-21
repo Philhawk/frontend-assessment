@@ -63,3 +63,13 @@
 .search-container > div:last-child {
 	border-radius: 0 0 10px 10px;
 }
+
+@media all and (min-width: 767px) { 
+	.search-container {
+    margin-top: -9px;
+}
+}
+
+@media all and (max-width: 767px) { 
+
+}

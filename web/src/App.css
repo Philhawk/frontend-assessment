@@ -33,6 +33,11 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
 }
 
+.fs-search {
+  z-index: 100;
+  margin-top: 10px;
+  width: 300px;
+}
 
 .App-header {
   background-color: #282c34;
@@ -68,9 +73,12 @@
 @media all and (max-width: 980px) { 
 
 }
-@media all and (max-width: 736px) { 
-
+@media all and (min-width: 769px) { 
+  .large-nav {
+    display: flex;
+  }
 }
+
 @media all and (max-width: 480px) { 
   
 }

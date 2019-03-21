@@ -3,8 +3,12 @@ import Search from '../Search/Search';
 import './Body.css'
 
 const Body = () => (
-	<div className="section-2">
-		<Search/>
+	<div>
+		<div className="section-2-with-search">
+			<Search/>
+		</div>
+		<div className="section-2-without-search">
+		</div>
 	</div>
 );
 
