@@ -46,7 +46,6 @@
 .no-results {
 	padding-left: 32px;
 	height: 150px;
-	width: 70%;
 	display: block;
 	position: relative;
 	margin-left: auto;
@@ -67,9 +66,19 @@
 @media all and (min-width: 767px) { 
 	.search-container {
     margin-top: -9px;
-}
+	}
+
+	.no-results {
+		margin-top: -8px;
+	}
 }
 
 @media all and (max-width: 767px) { 
+ .no-results {
+		width: 70%;
+ }
 
+ 	.no-results-box {
+		width: 94% !important;
+	}
 }

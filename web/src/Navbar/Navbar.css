@@ -22,7 +22,7 @@
     padding-top: 8px;
 	}
 }
-@media all and (max-width: 769px) { 
+@media all and (max-width: 767px) { 
   .marvel-logo {
 		display: none;
 	}
