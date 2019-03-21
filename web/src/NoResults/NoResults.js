@@ -9,7 +9,7 @@ class NoResults extends Component {
 				Oh No!
 			</div>
 			<div className="no-results-text">
-				No results were found for "{this.props.query}""
+				No results were found for "{this.props.query}"
 			</div>
 		</div>
 		)

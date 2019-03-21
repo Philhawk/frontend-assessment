@@ -33,6 +33,12 @@
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
 }
 
+input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, .5);
+}
+
+  
 .fs-search {
   z-index: 100;
   margin-top: 10px;

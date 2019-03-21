@@ -28,8 +28,8 @@
 	background-color: #FAFAFA;
 }
 
-.search-results:hover .search-results:active {
-	background-color: #dadfe1
+.search-results:hover, .search-results:active {
+	background-color: #E0D4D4 
 }
 .spinner {
 	height: 38px;
@@ -66,6 +66,10 @@
 @media all and (min-width: 767px) { 
 	.search-container {
     margin-top: -9px;
+	}
+	
+	.spinner {
+		margin-right: 28%
 	}
 
 	.no-results {

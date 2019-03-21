@@ -27,8 +27,20 @@ class Search extends Component {
     })
   }
 
+  locationSearch = (query) => {
+    this.setState({showSpinner: false, results: []})
+    axios.get(`http://localhost:1337/superheroes?base_like=${query}`)
+      .then(({ data }) => {
+        this.setState({
+          results: data,      
+          showSpinner: false                     
+        })
+      }).catch((err) => {
+        console.error(err)
+      })
+  }
+
   getInfo = (query) => {
-    console.log('ping')
     this.setState({showSpinner: false, results: []})
     axios.get(`http://localhost:1337/superheroes?name_like=${query}`)
       .then(({ data }) => {
@@ -37,7 +49,7 @@ class Search extends Component {
           showSpinner: false                     
         })
       }).catch((err) => {
-        // TODO
+        console.error(err)
       })
   }
 
@@ -48,12 +60,16 @@ class Search extends Component {
       query: this.search.value
     }, () => {
       if (this.state.query.length > 4 && this.state.results.length === 0) {
+        // Keep typing but no results
+        this.locationSearch(this.state.query)
         this.setState({showNoResults: true, showSpinner: false})
       }
       else if (this.state.query && this.state.query.length > 1) {
+        // Normal procedure, result expected
         this.setState({showNoResults: false})
-        this.getInfo(this.state.query)
+        this.getInfo(this.state.query, false)
       } else if (this.state.query === '') {
+        // When query is deleted (i.e person starts again)
         this.setState({showSpinner: false, showNoResults: false})
       } else if (this.state.results.length === 0) {
         this.setState({results: [], showSpinner: false, showNoResults: true})
@@ -65,8 +81,9 @@ class Search extends Component {
     return (
       <form>
 				<span>
+          {/* I had the placeholder originally as just 'Search..', but really felt the UI was best served being declarative. I am only searching by name and location, so thought it was best if the user knew this */}
 					<input
-						placeholder="Search.."
+						placeholder="Search by name/location.."
 						ref={input => this.search = input}
 						onChange={this.handleInputChange}
 						className="search-field"
