@@ -1,4 +1,4 @@
-# Philip Jacob - Marvel Frontend Challenge
+Marvel Frontend Challenge
 
 ## Overview
 This applications was built according to these guidelines, using a mobile-first approach that emphasises speed.
@@ -52,6 +52,10 @@ Within search, there were the following elements to consider
 - Accounting for No Results
 - Accounting for the logic of the spinner (a surprisingly tricky little bugger!)
 
+### To Redux, or not to Redux
+
+To quote the great Dan Abramov, I felt when analyzing this task that ["You might not need Redux"](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367). Given the boilerplate reducer logic that would have applied in this instance, I decided to not use it and instead just vanilla React state.
+
 ### CSS Frameworks
 
 For this task, I deliberately chose to not use any CSS frameworks. Why? Over the last few years I have spent alot of time understanding the benefits of self-prescribed grid systems and boxing. The task presented today was not overly difficult, but it did add a level of complexity to not go down the easier route of using a Semantic or Bootstrap.
@@ -70,6 +74,7 @@ As always, there is *so* much more I could do in this area.
 
 ### Testing
 
+Given the small size of the app, testing was definitely an area I spent a bit of time trying to curate. Shallow enzyme tests aside, I felt the real complexity lay in the mocked API call to the local endpoint was the core to the JEST testing. As with anything, I'm sure I could have (attempted) to implement in a more elegant way.
 
 ### Conclusion
 
