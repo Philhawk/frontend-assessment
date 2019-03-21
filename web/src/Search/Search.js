@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './Search.css';
 import axios from 'axios'
-
-const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
+import SearchResults from '../SearchResults/SearchResults'
 
 class Search extends Component {
   state = {
@@ -13,7 +12,6 @@ class Search extends Component {
   getInfo = (query) => {
     axios.get(`http://localhost:1337/superheroes?name_like=${query}`)
       .then(({ data }) => {
-          debugger;
         this.setState({
           results: data                           
         })
@@ -35,13 +33,25 @@ class Search extends Component {
   render() {
     return (
       <form>
-        <input
-          placeholder="Search..."
-          ref={input => this.search = input}
-          onChange={this.handleInputChange}
-        />
-        <p>{this.state.query}</p>
-      </form>
+				<span>
+					<input
+						placeholder="Search.."
+						ref={input => this.search = input}
+						onChange={this.handleInputChange}
+						className="search-field"
+					/>
+					<div className="loader"/>
+				</span>
+				<div className="search-container">
+        {
+					this.state.results ? this.state.results.map((row, i) =>
+					<div className="search-results">
+						<SearchResults {...row} />
+					</div>
+					) : ''
+				}
+				</div>
+			</form>
     )
   }
 }
